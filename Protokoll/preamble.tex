@@ -1,0 +1,62 @@
+% !TeX root = ./Protokoll.tex
+\usepackage[ngerman]{babel}
+\usepackage[acronym, shortcuts=ac, toc]{glossaries-extra}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{microtype}
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+\usepackage{etoolbox}
+\usepackage[default]{sourcesanspro}
+\usepackage[T1]{fontenc}
+
+\usepackage[
+  backend=biber,
+  style=numeric-comp,
+  sorting=none,
+  backref,
+  maxbibnames=5,
+  toc=bib,
+  giveninits=true,
+  defernumbers=true,
+  urldate=long
+]{biblatex}
+
+\makeatletter
+\hypersetup
+{
+  pdftitle = {\@title},
+  pdfsubject = {Laborversuch},
+  pdfauthor = {\@author},
+  unicode = {true},
+  %  bookmarks = {true},
+  bookmarksopen = {true},
+  hidelinks
+}
+\makeatother
+
+\makeatletter
+\AtBeginDocument{
+  \vspace*{-1.5cm}
+  \includegraphics[width=.3\linewidth]{logos/ditlogo-schwarz-de.pdf}\hfill\includegraphics[width=.4\linewidth]{logos/HTWK-H-DE-black.pdf}\\\\
+
+  {\sffamily
+  \begin{center}
+		\Large \textbf{\@title}
+  \end{center}
+
+  \begin{tabbing}
+    
+    Gruppenmitglieder::: \= blablabla blablblabla \kill \\
+    Erarbeitet von: \> \@author{}\\
+    2. Gruppenmitglied: \> \grouppartner{}\\
+	Gruppennummer: \> \groupnumber{}\\
+    Versuchsdatum: \> \labdate \\    
+    \end{tabbing}
+	
+\vspace{-1,5em}
+	\hrule
+}
+}
+\makeatother
